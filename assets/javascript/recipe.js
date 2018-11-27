@@ -1,4 +1,5 @@
 
+
 $(".secondpage").hide();
 var queryURLbase = "https://api.edamam.com/search?&app_id=192e6853&app_key=97cc74f29550dbca8f09e9ac463a150f&from=0&to=13&q=";
 var ingShowList = [];
@@ -105,18 +106,27 @@ function doAjax(queryURL) {
 			$('.recipeList').append(flex);
 		});
 };
+// ===============First page load==============
+$(".secondpage").hide();
+var firstload = "sandwich";
+var searchURL = queryURLbase + firstload;
+doAjax(searchURL);
+// ===============First page load end==============
 
 $(document).on('click', '.addVids', function () {
+	// ===============second page load==============
 	$(".secondpage").show();
 	var imgsrc = (imageShowList[parseInt($(this).attr('data-content'))]);
-	var im = $("<img class='thumbnail'>");
+	var datacon = ($(this).attr('data-content'));
+	var im = $("<img class='thumbnail' data-content'" + datacon + "'>");
 	im.attr("src", imgsrc);
 	$(".secondpageimg").append(im);
-	$(".name").append(nameRecepi[parseInt($(this).attr('data-content'))])
+	$(".name").append(nameRecepi[parseInt($(this).attr('data-content'))]);
 	$('.arti').append(ingShowList[parseInt($(this).attr('data-content'))]);
 	$('.wei').append(ingWeightList[parseInt($(this).attr('data-content'))]);
 	$('.nutritions').append(nutritionFacts[parseInt($(this).attr('data-content'))]);
 	$('.nutritionstot').append(nutritionTotal[parseInt($(this).attr('data-content'))]);
+	// ===============second page load==============
 	$('.article').empty();
 	$('.article').append(`<button type="button" class="btn btn-primary back">Back</button>`);
 	$('.article').append('<hr>');
@@ -152,3 +162,58 @@ $(".addRecipe").on("click", function (e) {
 	doAjax(searchURL);
 	$("#targetRecepi").val("");
 });
+
+// var saveLatter = [];
+// $(".salad").on("click", function (event) {
+// 	event.preventDefault();
+// 	alert("salad click");
+// 	console.log("click");
+// });
+// $(document).on("click", "#salad", function (e) {
+// 	e.preventDefault();
+
+// });
+
+
+function myFunction() {
+	// window.location.reload();
+	$(".recipeList").empty();
+	var x = document.getElementById("mySelect").selectedIndex;
+	var y = document.getElementById("mySelect").options;
+	// console.log("Index: " + y[x].index + " is " + y[x].text);
+	var userselect = y[x].text;
+	var searchURL = queryURLbase + userselect;
+	doAjax(searchURL);
+
+}
+
+// function myFunction() {
+// 	var checkBox = document.getElementById("myCheck");
+// 	var text = document.getElementById("checkbox12");
+// 	if (checkBox.checked == true) {
+// 		console.log(text);
+// 	} else {
+
+// 	}
+// }
+var checkboxarray = [];
+
+
+$('.get_tody_btn').click(function () {
+	checkboxarray = [];
+	var ck_string = "";
+	$.each($("input[name='today_check']:checked"), function () {
+		ck_string =  $(this).val();
+		checkboxarray.push(ck_string);
+	});
+	console.log(checkboxarray);
+	
+	for (var i = 0; i < checkboxarray.length; i++){
+		var coma =checkboxarray[i]+",";
+		
+	}
+	$("#targetRecepi").val(coma);
+
+	
+});
+

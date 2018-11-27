@@ -27,32 +27,104 @@
         <ul class="menu vertical">
 
           <div class="cell shrink">
-            <img class="thumbnail" src="assets/image/logo.png">
+            <img class="thumbnail" src="assets/image/logo2.jpg">
           </div>
           <h3>Meal Search</h3>
           <input type="search" name="search" placeholder="Search.." class="animated-search-form" id="targetRecepi">
           <input type="submit" class="button expanded addRecipe" value="Search">
 
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Food
+          <!-- <div class="dropdown watch">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Watch Later
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Salad</a>
+              <a class="dropdown-item" href="#salad">Salad</a>
               <a class="dropdown-item" href="#">Sandwich</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
+          </div> -->
+
+
+
+          <!-- <div class="dropdown ">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Food
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#" data-content="0" onclick="myFunction()">Salad</a>
+              <a class="dropdown-item" href="#"  data-content="1" onclick="myFunction()">Sandwich</a>
+              <a class="dropdown-item" href="#" data-content="2" onclick="myFunction()">fish</a>
+            </div>
+          </div> -->
+
+          <select id="mySelect" class="select">
+            <option>Select Food</option>
+            <option>Salad</option>
+            <option>Sandwich</option>
+            <option>Fish</option>
+
+          </select>
+
+          <input type="submit" class="button expanded" value="Search food" onclick="myFunction()">
+
+          <!-- <div class="small-2 columns side">
+              
+              <fieldset class="large-7 cell">
+                <legend>Check these out</legend>
+                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+              </fieldset>
+            </div> -->
+
+
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              In Your Fridge
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="row">
+                <input type="checkbox" value="onion" name="today_check"><label for="checkbox12">Onion</label>
+              </div>
+              <div class="row">
+                <input type="checkbox" value="tomatoes" name="today_check"><label for="checkbox22">Tomatoes</label>
+              </div>
+              <div class="row">
+                <input type="checkbox" value="cheese" name="today_check"><label for="checkbox32">Cheese </label>
+              </div>
+              <div class="row">
+                <input type="checkbox" value="lettuce" name="today_check"><label for="checkbox32">Lettuce </label>
+              </div>
+              <div class="row">
+                <input type="checkbox" value="pickle" name="today_check"><label for="checkbox32">Pickle </label>
+              </div>
+              <button type="submit" class="get_tody_btn expanded">Submit</button>
+            </div>
           </div>
+
 
         </ul>
       </div>
     </div>
     <div class="small-10 columns">
       <div class="title">
-        <h3>Lazy Grazer</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eum qui itaque aut, assumenda ad
-          perspiciatis
-          sunt earum amet temporibus dignissimos voluptates dolorem, libero aliquam veniam voluptas excepturi vel enim!</p>
+        <div class="row">
+          <div class="small-4 columns"></div>
+          <div class="small-4 columns">
+            <h1>
+              <span class="lazyspan title-bar-title">LAZY</span>
+              <span class="grazerspan title-bar-title">GRAZER</span>
+            </h1>
+          </div>
+          <div class="small-4 columns"></div>
+        </div>
+        <!-- <h3>Lazy Grazer</h3> -->
+        <!-- <p>This app will help you cook your meal with what you have in your fridge</p>
+        <p>HINT:Seperate the Ingredients by comma (,)</p> -->
       </div>
       <hr>
       <!--first page recepi image -->
@@ -77,10 +149,10 @@
 
       <ul class="tabs small-10 columns" data-tabs id="example-tabs">
         <li class="tabs-title is-active"><a href="#recepi" aria-selected="true">
-            <h4>Recipe List</h4>
+            <h5>Recipe List</h5>
           </a></li>
         <li class="tabs-title"><a href="#Videos">
-            <h4>How to make it Videos</h4>
+            <h5>How to make it Videos</h5>
           </a></li>
       </ul>
 
@@ -94,9 +166,8 @@
               <div class=" secondpageimg"></div>
             </div>
             <div class="medium-5 columns">
-              <h3 class="name"></h3>
-
-              <a href="#" class="button large expanded secondary bt">Add</a>
+              <h3 class="name" id="name"></h3>
+              <a href="#" class="button large expanded secondary bt savelatter">Save for Latter</a>
             </div>
           </div>
           <hr>
@@ -124,11 +195,11 @@
         <div class="tabs-panel" id="Videos">
           <h4>Video</h4>
           <hr>
-          <div class="vids">
-
-
+          <div class="row small-10">
+            <div class="vids">
+            </div>
           </div>
-
+          <hr>
         </div>
       </div>
 

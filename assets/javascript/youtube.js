@@ -10,7 +10,7 @@ function arrayOfEl(display, t) {
 }
 function displayVideo() {
     var display = `<div class="radius bordered shadow card addVids">
-    <h4>{{video}}</h4>
+    <h5>{{video}}</h5>
     <iframe class="rs view" width="400" height="400" src="//www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen>
     </iframe></div>`;
     return display;
